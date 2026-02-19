@@ -1,6 +1,6 @@
-# React Fundamentals — Labs 01–03
+# React Fundamentals — Labs 01–04
 
-This repository contains the solutions for **Lab 01**, **Lab 02**, and **Lab 03**.
+This repository contains the solutions for **Lab 01**, **Lab 02**, **Lab 03**, and **Lab 04**.
 
 ## Folder structure
 
@@ -24,6 +24,12 @@ This repository contains the solutions for **Lab 01**, **Lab 02**, and **Lab 03*
   - `README.md` — run instructions + task/component mapping.
 - `Lab_03/task2/` (Lab 3.2)
   - `react-fetch/` — UserProfile with useEffect and AbortController.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_04/task1/` (Lab 4.1)
+  - `react-form/` — RegistrationForm with controlled components and validation.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_04/task2/` (Lab 4.2)
+  - `react-articles/` — ArticleManager refactored into reusable components.
   - `README.md` — run instructions + task/component mapping.
 - `AI_REPORT.md` — required report describing how AI tools were used.
 
@@ -64,6 +70,18 @@ This repository contains the solutions for **Lab 01**, **Lab 02**, and **Lab 03*
 ### Lab 3.2 — User Profile with useEffect
 
 1. Open a terminal in `Lab_03/task2/react-fetch`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 4.1 — Registration Form with Validation
+
+1. Open a terminal in `Lab_04/task1/react-form`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 4.2 — Article Manager (Refactored Components)
+
+1. Open a terminal in `Lab_04/task2/react-articles`.
 2. Run `npm install` (once).
 3. Run `npm run dev` and open the printed URL in the browser.
 

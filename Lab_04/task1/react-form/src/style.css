@@ -1,0 +1,118 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0b1220;
+  color: #e8eefc;
+}
+
+#root {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.registrationForm {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a8c5ff;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e8eefc;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: rgba(100, 200, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.formGroup input.error {
+  border-color: rgba(255, 100, 100, 0.5);
+  background: rgba(255, 100, 100, 0.1);
+}
+
+.errorMessage {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #ff9999;
+}
+
+.successMessage {
+  margin: 16px 0 0;
+  padding: 12px;
+  font-size: 15px;
+  color: #99ff99;
+  background: rgba(100, 255, 150, 0.15);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(100, 200, 255, 0.15);
+  color: #a8d5ff;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.submitButton:hover {
+  background: rgba(100, 200, 255, 0.25);
+  border-color: rgba(100, 200, 255, 0.5);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}

@@ -1,4 +1,4 @@
-# Отчёт об использовании ИИ (Labs 01–03)
+# Отчёт об использовании ИИ (Labs 01–04)
 
 ## Инструменты
 
@@ -115,3 +115,57 @@
 - **AbortController** для cleanup — предотвращение memory leaks и race conditions.
 - Разница между **props** (read-only, передаются от родителя) и **state** (управляется внутри компонента, триггерит re-render).
 - Композиция компонентов — родительский компонент управляет состоянием и передаёт его через props дочерним компонентам.
+
+---
+
+## Lab 04 (Week 4): Event Handling & Reusable Components
+
+### Что сделал по заданию
+
+- Добавил структуру папок **по требованиям PDF**:
+  - `Lab_04/task1/react-form/` — Lab 4.1 (RegistrationForm с валидацией)
+  - `Lab_04/task2/react-articles/` — Lab 4.2 (ArticleManager рефакторинг)
+- Реализовал Lab 4.1:
+  - `RegistrationForm` — форма регистрации с тремя controlled inputs (name, email, age).
+  - **Controlled components**: все inputs используют `value` prop и `onChange` handler (Ch. 4).
+  - **Inline event handlers**: `onChange={(e) => setName(e.target.value)}` с синтетическими событиями.
+  - **Валидация**: `validateName()` (required, min 2 chars), `validateEmail()` (required, valid format), `validateAge()` (required, ≥ 18).
+  - Валидация запускается при изменении input (в onChange handlers).
+  - Отображение ошибок под каждым полем через conditional rendering.
+  - **preventDefault**: `onSubmit` handler вызывает `e.preventDefault()` для предотвращения отправки формы.
+  - Сообщение об успехе при валидной отправке, очистка полей формы.
+- Реализовал Lab 4.2:
+  - Начал с монолитного `ArticleManager` компонента (Task 1).
+  - **Извлёк AddArticle компонент** (Task 2): форма с props `name`, `title`, `summary`, handlers (Ch. 5).
+  - **Извлёк ArticleList компонент** (Task 3): маппит articles, рендерит `ArticleItem`.
+  - **Извлёк ArticleItem компонент** (Task 3): управляет своим состоянием `isOpened` через `useState` (вместо parent's display prop).
+  - Toggle логика перемещена в `ArticleItem` — каждый элемент управляет своим расширением независимо.
+  - Следует паттернам Ch. 5: извлечение JSX, передача props, локальное состояние в дочерних компонентах.
+
+### Как использовал ИИ (примеры запросов)
+
+- «Прочитай Lab 04 PDF и реализуй RegistrationForm с controlled components, валидацией и preventDefault».
+- «Сделай рефакторинг ArticleManager: извлеки AddArticle, ArticleList, ArticleItem по паттернам Ch. 5».
+- «ArticleItem должен управлять своим isOpened state через useState, а не через parent prop».
+
+### Внесённые правки / критическая проверка
+
+- При создании проектов через `create-vite` снова получились vanilla TypeScript шаблоны, поэтому:
+  - установил `react`, `react-dom`, типы, `@vitejs/plugin-react-swc`;
+  - добавил `vite.config.ts`, `main.tsx`, `App.tsx`;
+  - включил `jsx: "react-jsx"` в `tsconfig.json`;
+  - удалил лишние файлы (`src/main.ts`).
+- Проверил, что оба проекта собираются без ошибок (`npm run build`).
+- Убедился, что форма не отправляется на сервер (preventDefault работает).
+- Проверил, что все inputs являются controlled components (value + onChange).
+- Убедился, что `ArticleItem` использует свой `useState` для `isOpened`, а не prop от родителя.
+
+### Что я освоил (Lab 04)
+
+- **Event Handling в React**: declarative подход с inline handlers и синтетическими событиями (Ch. 4).
+- **Controlled Components**: паттерн `value` + `onChange` для управления состоянием формы через React state.
+- **preventDefault**: предотвращение стандартного поведения формы для клиентской валидации.
+- **Валидация форм**: проверка на изменение (onChange) и при отправке (onSubmit).
+- **Рефакторинг компонентов**: извлечение монолитного компонента в меньшие, переиспользуемые части (Ch. 5).
+- **Локальное состояние в дочерних компонентах**: `ArticleItem` управляет своим `isOpened` state для лучшей производительности.
+- **Композиция через props**: передача данных и handlers от родителя к дочерним компонентам.
