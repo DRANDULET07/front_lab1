@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 1.1 - Imperative jQuery Toggle</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        padding: 2rem;
+      }
+
+      .highlight {
+        background: yellow;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lab 1.1: Imperative jQuery Highlight Toggle</h1>
+    <button id="toggleButton">Toggle Highlight</button>
+    <p id="text">
+      This paragraph will gain or lose the <code>highlight</code> class when you
+      click the button.
+    </p>
+
+    <!-- Imperative DOM manipulation with jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#toggleButton").on("click", function () {
+          $("#text").toggleClass("highlight");
+        });
+      });
+    </script>
+  </body>
+</html>
+
