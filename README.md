@@ -1,6 +1,6 @@
-# React Fundamentals — Labs 01–02
+# React Fundamentals — Labs 01–03
 
-This repository contains the solutions for **Lab 01** and **Lab 02**.
+This repository contains the solutions for **Lab 01**, **Lab 02**, and **Lab 03**.
 
 ## Folder structure
 
@@ -18,6 +18,12 @@ This repository contains the solutions for **Lab 01** and **Lab 02**.
   - `README.md` — run instructions + task/component mapping.
 - `Lab_02/task2/` (Lab 2.2)
   - `react-props/` — Card, ProductList, Section tasks.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_03/task1/` (Lab 3.1)
+  - `react-counter/` — StepCounter with multiple useState hooks.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_03/task2/` (Lab 3.2)
+  - `react-fetch/` — UserProfile with useEffect and AbortController.
   - `README.md` — run instructions + task/component mapping.
 - `AI_REPORT.md` — required report describing how AI tools were used.
 
@@ -46,6 +52,18 @@ This repository contains the solutions for **Lab 01** and **Lab 02**.
 ### Lab 2.2 — Custom components + props + mapping
 
 1. Open a terminal in `Lab_02/task2/react-props`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 3.1 — Step Counter with multiple state
+
+1. Open a terminal in `Lab_03/task1/react-counter`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 3.2 — User Profile with useEffect
+
+1. Open a terminal in `Lab_03/task2/react-fetch`.
 2. Run `npm install` (once).
 3. Run `npm run dev` and open the printed URL in the browser.
 

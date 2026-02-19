@@ -1,4 +1,4 @@
-# Отчёт об использовании ИИ (Labs 01–02)
+# Отчёт об использовании ИИ (Labs 01–03)
 
 ## Инструменты
 
@@ -64,3 +64,54 @@
 - Практика **Fragments** (`<>...</>`) как способа группировки без лишних DOM-узлов.
 - Маппинг массивов в JSX и необходимость **уникальных `key`**.
 - Передача данных через **props** и композиция через `children`.
+
+---
+
+## Lab 03 (Week 3): React Components and Hooks — Props, State, useState, useEffect
+
+### Что сделал по заданию
+
+- Добавил структуру папок **по требованиям PDF**:
+  - `Lab_03/task1/react-counter/` — Lab 3.1 (StepCounter с множественными useState)
+  - `Lab_03/task2/react-fetch/` — Lab 3.2 (UserProfile с useEffect и cleanup)
+- Реализовал Lab 3.1:
+  - `StepCounter` — принимает props `initialValue` (default: 0) и `step` (default: 1).
+  - Использует **три useState**: `count`, `history` (массив), `operationCount`.
+  - Кнопки Increment/Decrement изменяют count на `step`, обновляют history и operationCount.
+  - Кнопка Reset сбрасывает всё к начальным значениям.
+  - `CounterApp` — родительский компонент с двумя независимыми `StepCounter` (initialValue={0} step={1} и initialValue={10} step={5}).
+  - Комментарий в коде объясняет разницу между props и state.
+- Реализовал Lab 3.2:
+  - `UserProfile` — использует **три useState**: `user`, `loading`, `error`.
+  - **useEffect** для fetch данных из `https://jsonplaceholder.typicode.com/users/{userId}`.
+  - **AbortController** для cleanup — отменяет запрос при unmount или изменении `userId`.
+  - Отображение состояний: "Loading...", ошибка, данные пользователя.
+  - `UserProfileApp` — родительский компонент управляет `userId` state, предоставляет кнопки "User 1/2/3" и "Refresh (Random User)".
+  - **Dependency array** в useEffect включает `userId` — при изменении `userId` запускается новый fetch.
+  - Комментарии объясняют dependency array и cleanup.
+
+### Как использовал ИИ (примеры запросов)
+
+- «Прочитай Lab 03 PDF и реализуй StepCounter с props, множественными useState, history и reset».
+- «Сделай UserProfile с useEffect, AbortController cleanup, loading/error состояниями».
+- «Объясни dependency array в useEffect и почему userId должен быть в зависимостях».
+
+### Внесённые правки / критическая проверка
+
+- При создании проектов через `create-vite` снова получились vanilla TypeScript шаблоны, поэтому:
+  - установил `react`, `react-dom`, типы, `@vitejs/plugin-react-swc`;
+  - добавил `vite.config.ts`, `main.tsx`, `App.tsx`;
+  - включил `jsx: "react-jsx"` в `tsconfig.json`;
+  - удалил лишние файлы (`src/main.ts`, `src/counter.ts`).
+- Проверил, что оба проекта собираются без ошибок (`npm run build`).
+- Убедился, что каждый `StepCounter` поддерживает независимое состояние (два экземпляра работают независимо).
+- Проверил, что cleanup в useEffect правильно отменяет запросы при изменении `userId` или unmount.
+
+### Что я освоил (Lab 03)
+
+- **useState** для управления несколькими состояниями в одном компоненте (count, history, operationCount).
+- **Props с default values** (`initialValue = 0`, `step = 1`) и их использование для инициализации state.
+- **useEffect** для side effects (data fetching) и правильное использование **dependency array**.
+- **AbortController** для cleanup — предотвращение memory leaks и race conditions.
+- Разница между **props** (read-only, передаются от родителя) и **state** (управляется внутри компонента, триггерит re-render).
+- Композиция компонентов — родительский компонент управляет состоянием и передаёт его через props дочерним компонентам.
