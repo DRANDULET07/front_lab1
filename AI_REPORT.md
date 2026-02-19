@@ -1,4 +1,4 @@
-# Отчёт об использовании ИИ (Labs 01–04)
+# Отчёт об использовании ИИ (Labs 01–05)
 
 ## Инструменты
 
@@ -169,3 +169,54 @@
 - **Рефакторинг компонентов**: извлечение монолитного компонента в меньшие, переиспользуемые части (Ch. 5).
 - **Локальное состояние в дочерних компонентах**: `ArticleItem` управляет своим `isOpened` state для лучшей производительности.
 - **Композиция через props**: передача данных и handlers от родителя к дочерним компонентам.
+
+---
+
+## Lab 05 (Week 5): TypeScript & Props Validation
+
+### Что сделал по заданию
+
+- Добавил структуру папок **по требованиям PDF**:
+  - `Lab_05/task1/react-types/` — Lab 5.1 (Typed Components & Props Validation)
+  - `Lab_05/task2/react-search/` — Lab 5.2 (Typing State & Event Handlers)
+- Реализовал Lab 5.1:
+  - `types.ts` — интерфейсы и типы: `User` (interface), `SkillLevel` (union type alias), `Skill` (interface).
+  - `UserCard` — типизированные props: `user: User`, `isActive?: boolean` (optional с default), `children: React.ReactNode`.
+  - `SkillList` — типизированные props: `skills: Skill[]` (typed array), условная стилизация по уровню.
+  - `tsconfig.json` имеет `"strict": true` для compile-time проверки типов.
+- Реализовал Lab 5.2:
+  - `SearchApp` — типизированный `useState<User[]>([])` с explicit generic (TS не может вывести `User` из пустого массива).
+  - Типизированные event handlers: `React.ChangeEvent<HTMLInputElement>` для поиска, `React.MouseEvent<HTMLButtonElement>` для очистки.
+  - Фильтрация пользователей по имени в реальном времени.
+  - **Ноль использования `any`** — все типы явные.
+  - Отображение "No results found" когда список пуст.
+
+### Как использовал ИИ (примеры запросов)
+
+- «Прочитай Lab 05 PDF и реализуй типизированные компоненты с интерфейсами и type aliases».
+- «Сделай SearchApp с типизированным useState<User[]> и типизированными event handlers».
+- «Объясни разницу между interface и type alias, когда использовать explicit generics в useState».
+
+### Внесённые правки / критическая проверка
+
+- При создании проектов через `create-vite` с шаблоном `react-ts` всё равно нужно было:
+  - установить `react`, `react-dom`, типы, `@vitejs/plugin-react-swc`;
+  - добавить `vite.config.ts` с React плагином;
+  - включить `jsx: "react-jsx"` в `tsconfig.json`;
+  - удалить лишние файлы (`src/main.ts`).
+- Проверил, что оба проекта собираются без ошибок (`npm run build`) и **ноль TypeScript ошибок**.
+- Убедился, что `tsconfig.json` имеет `"strict": true` в обоих проектах.
+- Проверил, что нет использования `any` нигде в коде.
+- Убедился, что все event handlers используют специфичные React типы (`React.ChangeEvent`, `React.MouseEvent`).
+
+### Что я освоил (Lab 05)
+
+- **TypeScript vs PropTypes**: compile-time проверка типов (TypeScript) vs runtime предупреждения (PropTypes).
+- **Interfaces**: для object shapes (`User`, `Skill`, props interfaces) — можно расширять и объединять.
+- **Type Aliases**: для union types (`SkillLevel = 'Beginner' | 'Intermediate' | 'Expert'`) — нельзя переоткрывать.
+- **Optional Props**: `isActive?: boolean` с default value для опциональных пропсов.
+- **React.ReactNode**: для `children` prop, принимает любой renderable контент.
+- **Generics в useState**: `useState<User[]>([])` нужен explicit generic, так как TS не может вывести тип из пустого массива.
+- **Typed Event Handlers**: `React.ChangeEvent<HTMLInputElement>` и `React.MouseEvent<HTMLButtonElement>` для type safety.
+- **Strict Mode**: `"strict": true` в tsconfig.json обеспечивает строгую проверку типов на этапе компиляции.
+- **Zero `any`**: избегание `any` для максимальной type safety.

@@ -1,6 +1,6 @@
-# React Fundamentals — Labs 01–04
+# React Fundamentals — Labs 01–05
 
-This repository contains the solutions for **Lab 01**, **Lab 02**, **Lab 03**, and **Lab 04**.
+This repository contains the solutions for **Lab 01**, **Lab 02**, **Lab 03**, **Lab 04**, and **Lab 05**.
 
 ## Folder structure
 
@@ -30,6 +30,12 @@ This repository contains the solutions for **Lab 01**, **Lab 02**, **Lab 03**, a
   - `README.md` — run instructions + task/component mapping.
 - `Lab_04/task2/` (Lab 4.2)
   - `react-articles/` — ArticleManager refactored into reusable components.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_05/task1/` (Lab 5.1)
+  - `react-types/` — Typed components with interfaces and type aliases.
+  - `README.md` — run instructions + task/component mapping.
+- `Lab_05/task2/` (Lab 5.2)
+  - `react-search/` — User search with typed useState and event handlers.
   - `README.md` — run instructions + task/component mapping.
 - `AI_REPORT.md` — required report describing how AI tools were used.
 
@@ -82,6 +88,18 @@ This repository contains the solutions for **Lab 01**, **Lab 02**, **Lab 03**, a
 ### Lab 4.2 — Article Manager (Refactored Components)
 
 1. Open a terminal in `Lab_04/task2/react-articles`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 5.1 — Typed Components & Props Validation
+
+1. Open a terminal in `Lab_05/task1/react-types`.
+2. Run `npm install` (once).
+3. Run `npm run dev` and open the printed URL in the browser.
+
+### Lab 5.2 — User Search (Typed State & Events)
+
+1. Open a terminal in `Lab_05/task2/react-search`.
 2. Run `npm install` (once).
 3. Run `npm run dev` and open the printed URL in the browser.
 

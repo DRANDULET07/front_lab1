@@ -1,0 +1,104 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0b1220;
+  color: #e8eefc;
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.app {
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: #a8c5ff;
+}
+
+.userCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.userCard h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.userCard p {
+  margin: 8px 0;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.bio,
+.status {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio p,
+.status p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.skillsSection {
+  margin-top: 32px;
+}
+
+.skillList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skillItem {
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.skillName {
+  font-weight: 600;
+  color: #e8eefc;
+}
+
+.skillLevel {
+  font-weight: 500;
+}
