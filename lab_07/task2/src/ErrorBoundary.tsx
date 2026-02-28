@@ -1,4 +1,5 @@
-import { Component, ReactNode } from "react";
+import { Component } from "react";
+import type { ReactNode, ErrorInfo } from "react";
 import ErrorFallback from "./components/ErrorFallback";
 
 type ErrorBoundaryProps = {
@@ -20,8 +21,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    // можно логировать ошибку на сервер
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    // здесь можно логировать ошибку на сервер
     console.error("ErrorBoundary caught an error:", error, errorInfo);
   }
 
