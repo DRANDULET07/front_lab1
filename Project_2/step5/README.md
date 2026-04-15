@@ -1,7 +1,7 @@
 # Project 2 Step 5 – Styling & Responsive Layouts
 
-Student Name: YOUR_NAME
-Student ID: YOUR_ID
+Student Name: Жалбаслар Даулет
+Student ID: DS
 Date: 2026
 
 ## Overview
